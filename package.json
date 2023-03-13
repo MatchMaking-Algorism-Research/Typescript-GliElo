@@ -1,0 +1,33 @@
+{
+  "name": "typescript-glielo",
+  "version": "1.0.0",
+  "description": "Typescript Library for MatchMaking System using Glicko-2 & ELO Rating System",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:babel": "babel lib --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "test": "npm run build && npm run test:lint && npm run test:lib && npm run test:express && npm run test:dist",
+    "test:lib": "mocha -r ts-node/register test/lib/**/*.spec.ts",
+    "test:express": "mocha -r ts-node/register test/express/**/*.spec.ts",
+    "test:dist": "mocha -r ts-node/register test/dist/**/*.spec.ts",
+    "test:lint": "eslint --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatchMaking-Algorism-Research/Typescript-GliElo.git"
+  },
+  "author": "KiRist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatchMaking-Algorism-Research/Typescript-GliElo/issues"
+  },
+  "homepage": "https://github.com/MatchMaking-Algorism-Research/Typescript-GliElo#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "typescript": "^4.9.5"
+  }
+}
