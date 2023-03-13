@@ -1,4 +1,4 @@
-import { update_ELORating } from "../dist/ELO";
+import update_ELORating from "../lib/ELO";
 
 var expect = require("chai").expect;
 
@@ -14,12 +14,14 @@ describe("1500 vs 1600 ELO test", () => {
       rating: 1600,
     };
 
-    player1["rating"] = update_ELORating(
-      player1["rating"],
-      player2["rating"],
-      1,
-      20
-    );
+    const match_test = {
+      init_rating: player1["rating"],
+      opponent_rating: player2["rating"],
+      match_result: 1,
+      k: 20,
+    };
+
+    player1["rating"] = update_ELORating(match_test);
     expect(player1["rating"]).to.equal(1516);
   });
 });
