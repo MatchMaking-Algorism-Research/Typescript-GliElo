@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["lib/*"]
+      "@/*": ["src/lib/*"]
     },
     "resolveJsonModule": true,
     "noImplicitAny": true,
@@ -14,5 +14,11 @@
     "emitDeclarationOnly": true,
     "isolatedModules": true
   },
-  "include": ["lib/**/*", "dist/**/*", "test/**/*", "./.eslintrc.js"]
+  "include": [
+    "src/lib/**/*",
+    "dist/**/*",
+    "test/**/*",
+    "./.eslintrc.js",
+    "src/index.ts"
+  ]
 }

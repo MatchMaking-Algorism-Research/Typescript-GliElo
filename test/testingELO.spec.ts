@@ -1,4 +1,4 @@
-import update_ELORating from "../lib/ELO";
+import update_ELORating from "../src/lib/ELO";
 
 var expect = require("chai").expect;
 

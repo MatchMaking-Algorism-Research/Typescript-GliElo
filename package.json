@@ -8,9 +8,9 @@
     "build": "tsc",
     "build:babel": "babel lib --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "test": "npm run build && npm run test:lint && npm run test:lib && npm run test:express && npm run test:dist",
-    "test:lib": "mocha -r ts-node/register test/lib/**/*.spec.ts",
-    "test:express": "mocha -r ts-node/register test/express/**/*.spec.ts",
-    "test:dist": "mocha -r ts-node/register test/dist/**/*.spec.ts",
+    "test:lib": "mocha -r ts-node/register test/**/*.spec.ts",
+    "test:express": "mocha -r ts-node/register test/**/*.spec.ts",
+    "test:dist": "mocha -r ts-node/register dist/test/**/*.spec.ts",
     "test:lint": "eslint --fix",
     "prepublishOnly": "npm run build"
   },
@@ -26,8 +26,19 @@
   "homepage": "https://github.com/MatchMaking-Algorism-Research/Typescript-GliElo#readme",
   "devDependencies": {
     "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "braces": "^3.0.2",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "glob-parent": "^6.0.2",
+    "json5": "^2.2.3",
     "typescript": "^4.9.5"
   }
 }
