@@ -1,6 +1,8 @@
-import update_ELORating from "../src/lib/ELO";
+import { update_ELORating ,match} from "../src/lib/ELO";
+import * as mocha from 'mocha';
+import * as chai from 'chai';
 
-var expect = require("chai").expect;
+const expect = chai.expect;
 
 describe("1500 vs 1600 ELO test", () => {
   it("", () => {
@@ -14,7 +16,7 @@ describe("1500 vs 1600 ELO test", () => {
       rating: 1600,
     };
 
-    const match_test = {
+    const match_test:match = {
       init_rating: player1["rating"],
       opponent_rating: player2["rating"],
       match_result: 1,

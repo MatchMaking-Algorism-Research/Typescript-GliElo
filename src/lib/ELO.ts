@@ -6,7 +6,7 @@
     k : K-factor
     */
 
-export interface match {
+type match = {
   init_rating: number;
   opponent_rating: number;
   match_result: number;
@@ -21,4 +21,4 @@ function update_ELORating(match: match) {
   return result_rating;
 }
 
-export default { update_ELORating };
+export { update_ELORating };  export type { match };
